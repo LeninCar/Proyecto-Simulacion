@@ -1,5 +1,6 @@
 Autores: Valentina Barbetty Arango | Lenin Esteban Carabalí Moreno | Juan José Cortés Rodríguez
 Fecha: Febrero-Julio 2025
+
 # Descripción
 En este repositorio se aloja el codigo desarrollado para apoyar el proyecto de la materia SIMULACIÓN Y COMPUTACIÓN NUMERICA relacionado con la realizacion de la simulación numérica de flujo incompresible utilizando las ecuaciones de Navier-Stokes, desde discretizar las ecuaciones para poder trabajarlas con codigo, hasta solucionarlas con metodos numericos para sistemas de ecuaciones no lineales y lineales, por ultimo mejorar la visualización interpolando los resultados con splines.
 
