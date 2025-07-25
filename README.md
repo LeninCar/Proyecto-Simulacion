@@ -2,13 +2,13 @@
 #### Fecha: Febrero-Julio 2025
 
 # Descripción
-En este repositorio se aloja el codigo desarrollado para apoyar el proyecto de la materia SIMULACIÓN Y COMPUTACIÓN NUMERICA relacionado con la realizacion de la simulación numérica de flujo incompresible utilizando las ecuaciones de Navier-Stokes, desde discretizar las ecuaciones para poder trabajarlas con codigo, hasta solucionarlas con metodos numericos para sistemas de ecuaciones no lineales y lineales, por ultimo mejorar la visualización interpolando los resultados con splines.
+En este repositorio se aloja el codigo desarrollado para apoyar el proyecto de la materia *SIMULACIÓN Y COMPUTACIÓN NUMERICA* relacionado con la realizacion de la simulación numérica de flujo incompresible utilizando las ecuaciones de Navier-Stokes, desde discretizar las ecuaciones para poder trabajarlas con codigo, hasta solucionarlas con metodos numericos para sistemas de ecuaciones no lineales y lineales, por ultimo mejorar la visualización interpolando los resultados con splines.
 
 # Información
 Este repositorio está dividido en 3 secciones, cada una en una carpeta:
 
 # Sección 1: Primer Avance de solucion del sistema no lineal (carpeta "No lineal method") 
-En esta sección se desarrolló la solución del problema utilizando el metodo de Newton Raphson para resolver el sistema no lineal y de forma interna se utilizaron dos opciones de metodos lineales (no iterativos), Eliminación de gauss y spsolve propio de python. esto ultimo con el objetivo de poder visualizar resultados ya que para ese entonces no teníamos conocimiento de los metodos lineales iterativos que se verían mas adelante en el curso.
+En esta sección se desarrolló la solución del problema utilizando el metodo de Newton Raphson para resolver el sistema no lineal y de forma interna se utilizaron dos opciones de metodos lineales (no iterativos), Eliminación de gauss y spsolve propio de python. esto ultimo con el objetivo de poder visualizar resultados ya que para ese entonces no teníamos conocimiento de los metodos lineales iterativos que se verían mas adelante en el curso y que son utilizados en la siguiente sección.
 
 En esta parte del proyecto se implementa la simulación de flujo de fluidos en una malla bidimensional utilizando el método de Newton-Raphson para resolver sistemas de ecuaciones no lineales.
 
