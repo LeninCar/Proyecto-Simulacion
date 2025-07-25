@@ -88,3 +88,6 @@ python cubic_splines.py
 - **Mejora**: Resolución aumentada (7x52 → 50x200) con transiciones suaves
 
 ---
+
+## Anexo de ejcución en estorno virtual (notebook)
+https://colab.research.google.com/drive/1t9WZjB2AtkLwX0Lvln5KLzFgRprM7IUF?usp=sharing
