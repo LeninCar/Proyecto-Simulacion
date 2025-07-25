@@ -19,6 +19,7 @@ def inicializar_malla():
     # Condición inicial en puntos internos
     for i in range(1, FILAS-1):
         for j in range(1, COLUMNAS-1):
+            # vx[i, j] = max(0, 1 - (j / (cols-2)))  # Disminución lineal
             vx[i, j] = 0.5
             vy[i, j] = VY_CONSTANTE
     
