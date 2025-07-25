@@ -1,41 +1,90 @@
 Autores: Valentina Barbetty Arango | Lenin Esteban Carabalí Moreno | Juan José Cortés Rodríguez
 Fecha: Febrero-Julio 2025
+# Descripción
+En este repositorio se aloja el codigo desarrollado para apoyar el proyecto de la materia SIMULACIÓN Y COMPUTACIÓN NUMERICA relacionado con la realizacion de la simulación numérica de flujo incompresible utilizando las ecuaciones de Navier-Stokes, desde discretizar las ecuaciones para poder trabajarlas con codigo, hasta solucionarlas con metodos numericos para sistemas de ecuaciones no lineales y lineales, por ultimo mejorar la visualización interpolando los resultados con splines.
 
-# Método de Newton-Raphson para el sistema NO LINEAL
+# Información
+Este repositorio está dividido en 3 secciones, cada una en una carpeta:
+
+# Sección 1: Primer Avance de solucion del sistema no lineal 
+## (carpeta "No lineal method") 
+En esta sección se desarrolló la solución del problema utilizando el metodo de Newton Raphson para resolver el sistema no lineal y de forma interna se utilizaron dos opciones de metodos lineales (no iterativos), Eliminación de gauss y spsolve propio de python. esto ultimo con el objetivo de poder visualizar resultados ya que para ese entonces no teníamos conocimiento de los metodos lineales iterativos que se verían mas adelante en el curso.
 
 En esta parte del proyecto se implementa la simulación de flujo de fluidos en una malla bidimensional utilizando el método de Newton-Raphson para resolver sistemas de ecuaciones no lineales.
 
-
-El método de Newton-Raphson está implementado en:
-- **[`core/solvers.py`](core/solvers.py)**: Funciones `newton_raphson_step_spsolve()` y `newton_raphson_step_gauss()`
-- **[`core/equations.py`](core/equations.py)**: Función `F()` (sistema no lineal) y `Jacobiano()` (matriz jacobiana)
-
-## Ejecución
-
-### Requisitos
+Para visualizar los resultados de esta sección se siguen los pasos:
+## Instalación necesaria:
 ```bash
 pip install numpy scipy matplotlib
 ```
 
-**Con Método spsolve**
+## Ejecución:
 ```bash
-python main_spsolve.py
+cd "No lineal method"
+python main_spsolve.py     # Método con spsolve
+python main_gauss.py       # Método con eliminación de Gauss
 ```
 
-**Con Eliminación de Gauss**
+## ¿Qué se visualiza?
+- **Consola**: Información del Jacobiano (dimensiones, elementos) y progreso de convergencia
+- **Gráfica 1**: Malla de velocidades con cuadrícula
+- **Gráfica 2**: Matriz Jacobiana 
+
+---
+
+# Sección 2: Métodos Lineales Iterativos (carpeta "Lineal methods")
+Implementación de métodos iterativos (Jacobi, Gauss-Seidel, Richardson, LU) con análisis de convergencia.
+
+## Instalaciones necesarias:
 ```bash
-python main_gauss.py
+pip install numpy scipy matplotlib pandas
 ```
 
-## Qué Esperar al Ejecutar
+## Ejecución:
+```bash
+cd "Lineal methods"
 
-### 1. Visualización en Tiempo Real
-- **Gráficas**: Muestra la evolución del campo de velocidades en cada iteración y al final la grafica de la matriz Jacobiana
+# PASO 1 - Análisis inicial 
+python main_analysis.py
 
-### 2. Información en Consola
+# PASO 2 - Ejecutar métodos individuales
+python main_lu.py
+python main_jacobi.py
+python main_gauss_seidel.py
+python main_richardson.py
 ```
-Iteración 1, error: 2.345678e-01
-Iteración 2, error: 1.234567e-02
-...
-Convergencia alcanzada.
+
+## ¿Qué se visualiza?
+
+### main_analysis.py:
+- **Consola**: 
+  - Tabla de velocidades inicial
+  - Información del Jacobiano (dimensiones, número de condición)
+  - Análisis de supuestos de convergencia para cada método
+  - Verificación de diagonal dominante y normas
+
+### Métodos individuales (main_*.py):
+- **Consola**: Progreso iterativo con normas de error y convergencia
+- **Gráfica**: Campo de velocidades final del método correspondiente
+
+---
+
+# Sección 3: Visualización Mejorada (carpeta "Improve Visualization")
+Mejora de visualización usando interpolación con splines cúbicos bidimensionales.
+
+## Instalaciones necesarias:
+```bash
+pip install numpy scipy matplotlib
 ```
+
+## Ejecución:
+```bash
+cd "Improve Visualization"
+python cubic_splines.py
+```
+
+## ¿Qué se visualiza?
+- **Gráfica**: Comparación lado a lado del campo original vs suavizado con splines
+- **Mejora**: Resolución aumentada (7x52 → 50x200) con transiciones suaves
+
+---
